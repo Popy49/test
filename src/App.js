@@ -1,25 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import {Modal} from 'modal-react-library'
+import MyComponent from "./Mycomponent"
+import Rain from './Rain';
+import { useEffect, useState } from 'react';
+import { useFetch } from './usefetch';
+
 
 function App() {
+
+    //API Call
+    const { data, isLoading, error } = useFetch(
+      `https://popy49user.free.beeceptor.com/user/12`
+    )
+
+
+
+
+if (!isLoading) {
+  if (error) {
+    return <span>Une erreur est survenue, {error}</span>
+  }
+  console.log(data)
+  const userFirstName = data.data.userInfos.firstName
+  const userDailyScore = data.data.todayScore
+  const userNutritionnalsDatas = data.data.keyData
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+    <h1>Hello</h1>
+    <p>{userFirstName}</p>
+    </main>
+  )
+}
 }
 
 export default App;

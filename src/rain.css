@@ -1,0 +1,32 @@
+/* rain drop styles */
+
+.drop {
+    color: white;
+    background:-webkit-gradient(linear,0 0,0 100%,from(#0d343a),to(hsla(0,0%,100%,.5)));
+    /* background: linear-gradient(90deg, rgba(158,173,186,1) 0%, rgba(170,183,194,1) 63%, rgba(255,255,255,1) 100%);
+    background: -moz-linear-gradient(top, rgb(75, 180, 196) 0%, rgba(255,255,255,.5) 100%); */
+      width:1px;
+      height:20px;
+      position: absolute;
+      bottom:200px;
+      -webkit-animation: fall 2s linear infinite;
+    -moz-animation: fall 2s linear infinite;
+    box-shadow: 5px 11px 44px 16px rgb(255 255 255 / 40%);
+
+  }
+  
+  /* drop animation styles */
+  @-webkit-keyframes fall {
+      to {margin-top:900px;}
+  }
+  @-moz-keyframes fall {
+      to {margin-top:900px;}
+  }
+  
+  @keyframes fall {
+    to {margin-top:900px;}
+  }
+
+  /* #Rain{
+    height: 500px;
+  } */
